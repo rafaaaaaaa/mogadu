@@ -1,0 +1,181 @@
+﻿<UserControl x:Class="mogadu.Views.Templates.UebersichtUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:mogadu.Views.Dashboard"
+             xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             d:DesignHeight="3000" d:DesignWidth="3000">
+
+
+    <UserControl.Resources>
+        <Style x:Key="LargeTileStyle" TargetType="mah:Tile">
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="300" />
+            <Setter Property="TitleFontSize" Value="17" />
+            <Setter Property="Foreground" Value="Gray"></Setter>
+            <Setter Property="FontFamily" Value="Lato Regular"/>
+            <Setter Property="Background" Value="LightBlue"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="280" />
+                    <Setter Property="Height" Value="280" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="SmallTileStyle" TargetType="mah:Tile">
+            <Setter Property="Width" Value="180" />
+            <Setter Property="Height" Value="180" />
+            <Setter Property="TitleFontSize" Value="17" />
+            <Setter Property="Foreground" Value="Gray"></Setter>
+            <Setter Property="FontFamily" Value="Lato Regular"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="160" />
+                    <Setter Property="Height" Value="160" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ExtraSmallTileStyle" TargetType="mah:Tile">
+            <Setter Property="Width" Value="130" />
+            <Setter Property="Height" Value="130" />
+            <Setter Property="TitleFontSize" Value="17" />
+            <Setter Property="Foreground" Value="Gray"></Setter>
+            <Setter Property="FontFamily" Value="Lato Regular"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="110" />
+                    <Setter Property="Height" Value="110" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="MiddleTileStyle" TargetType="mah:Tile">
+            <Setter Property="Width" Value="240" />
+            <Setter Property="Height" Value="240" />
+            <Setter Property="TitleFontSize" Value="17" />
+            <Setter Property="Foreground" Value="Gray"></Setter>
+            <Setter Property="FontFamily" Value="Lato Regular"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="220" />
+                    <Setter Property="Height" Value="220" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Übersicht" Grid.Row="0">
+            <TextBlock.Style>
+                <Style>
+                    <Setter Property="TextBlock.FontSize" Value="20" />
+                    <Setter Property="TextBlock.Foreground" Value="#5c616b"></Setter>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <WrapPanel Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <mah:Tile Title="Team"  Style="{StaticResource LargeTileStyle}" Background="LightBlue" Margin="3">
+                <mah:Tile.Content>
+                    <ContentControl Content ="{Binding TeamTile }" Height="300" Width="300" />
+                </mah:Tile.Content>
+            </mah:Tile>
+
+            <StackPanel>
+                <mah:Tile Title="Wetter"  Style="{StaticResource ExtraSmallTileStyle}" Background="LightSkyBlue" Margin="110,0,0,0">
+                    <mah:Tile.Content>
+                        <ContentControl Content ="{Binding WetterTile }" Height="200" Width="200" />                    
+                    </mah:Tile.Content>
+                </mah:Tile>
+                <mah:Tile Title="Mitarbeiter des Monates"  Style="{StaticResource MiddleTileStyle}" Background="DeepSkyBlue" Margin="5,5,0,0">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+                <mah:Tile Title="Tag"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="0,10,50,0" RenderTransformOrigin="0.622,0.5">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile}" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+
+            </StackPanel>
+            <StackPanel>
+                <mah:Tile Title="Aufgaben"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="5,0,120,0">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+                <mah:Tile Title="Neuigkeiten"  Style="{StaticResource LargeTileStyle}" Background="LightBlue">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+                <mah:Tile Title="Sonstiges"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="120,0,0,0">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+            </StackPanel>
+
+            <StackPanel>
+                <mah:Tile Title="Teamleiter"  Style="{StaticResource MiddleTileStyle}" Background="DeepSkyBlue" Margin="0,0,0,0">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+
+                <mah:Tile Title="Positionen"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="60,10,0,0" Click="Tile_Click">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+                <mah:Tile Title="Aufträge"  Style="{StaticResource ExtraSmallTileStyle}" Background="LightSkyBlue" Margin="110,10,0,0">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+            </StackPanel>
+            <StackPanel>
+            <mah:Tile Title="Pendenzen"  Style="{StaticResource LargeTileStyle}" Background="LightBlue" Margin="10,0,0,0">
+                <mah:Tile.ContentTemplate>
+                    <DataTemplate>
+                        <ContentControl Content ="{Binding TeamTile}" Height="200" Width="200" />
+                    </DataTemplate>
+                </mah:Tile.ContentTemplate>
+            </mah:Tile>
+                <mah:Tile Title="Firma"  Style="{StaticResource MiddleTileStyle}" Background="DeepSkyBlue" Margin="0,10,50,0">
+                    <mah:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <ContentControl Content ="{Binding TeamTile}" Height="200" Width="200" />
+                        </DataTemplate>
+                    </mah:Tile.ContentTemplate>
+                </mah:Tile>
+            </StackPanel>
+        </WrapPanel>
+
+    </Grid>
+</UserControl>

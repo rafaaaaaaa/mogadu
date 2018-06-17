@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="mogadu" namespace="mogadu.Database.Entities">
+  <class name="Mitarbeiter" table="Mitarbeiter" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="MitarbeiterId" column="MitarbeiterId" type="long">
+      <generator class="native" />
+    </id>
+
+    <property name="Name"  />
+    <property name="Vorname"  />
+    <property name="Eintrittsdatum"  />
+    <property name="TeamId" />
+    <property name="PositionId" />
+    <property name="IsMale" />
+  </class>
+</hibernate-mapping>

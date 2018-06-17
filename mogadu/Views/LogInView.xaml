@@ -1,0 +1,50 @@
+﻿<Window x:Class="mogadu.Views.LogInView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mogadu.Views"
+        mc:Ignorable="d"
+        Title="mogadu" Height="450" Width="550" DataContext="~/Viewmodels/LoginViewModel.cs">
+    
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="18*"></RowDefinition>
+            <RowDefinition Height="18*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+            <RowDefinition Height="20px"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Resources/mogadu.png" Grid.Row="0" />
+        <Label Content="mogadu" Grid.Row="1" HorizontalAlignment="Center" FontSize="13px" Margin="242,0,242,58" Width="58" Foreground="DarkGray" Grid.RowSpan="2"></Label>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.3*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <ComboBox Grid.Row="0" ItemsSource="{Binding Mitarbeiters}" SelectedItem="{Binding SelectedMitarbeiter}" Height="30px" Width="270px">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.3*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Content="Password:" HorizontalAlignment="Center"></Label>
+            <PasswordBox Grid.Row="1" Background="LightGray" Height="30px" Width="270px" x:Name="PasswortBox"></PasswordBox>
+        </Grid>
+        <Button Grid.Row="4" Content="Login" Width="100px" Height="24px" Background="DarkGray" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=PasswortBox}"></Button>
+    </Grid>
+</Window>

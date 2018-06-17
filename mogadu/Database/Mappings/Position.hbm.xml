@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="mogadu" namespace="mogadu.Database.Entities">
+  <class name="Position" table="Position" dynamic-update="true" >
+    <cache usage="read-write"/>
+    <id name="PositionsId" column="PositionsId" type="long">
+      <generator class="native" />
+    </id>
+
+    <property name="Positionsbezeichnung"  />
+    <property name="Lohnkoeffizient"  />
+  </class>
+</hibernate-mapping>
