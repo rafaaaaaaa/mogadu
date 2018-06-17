@@ -6,7 +6,20 @@
              xmlns:local="clr-namespace:mogadu.Views.Dashboard"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <Label Content="ajaj" FontSize="26"></Label>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Image  Source="pack://application:,,,/Resources/sun.png" Height="50" Margin="0,0,0,75" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image.Style>
+                <Style TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Wetterstatus}" Value="1">
+                            <Setter Property="Source" Value="pack://application:,,,/Resources/rain.png"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Wetterstatus}" Value="0">
+                            <Setter Property="Source" Value="pack://application:,,,/Resources/sun.png"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
     </Grid>
 </UserControl>

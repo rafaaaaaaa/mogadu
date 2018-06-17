@@ -11,7 +11,9 @@ namespace mogadu.Business
     {
         public int ErmittleWetter()
         {
-            throw new NotImplementedException();
+            Random rnd = new Random();
+            int randomZahl = rnd.Next(0, 2);
+            return randomZahl;
         }
     }
 }

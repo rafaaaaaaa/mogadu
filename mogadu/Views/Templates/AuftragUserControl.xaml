@@ -1,0 +1,144 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:mogadu.Views.Templates"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="mogadu.Views.Suche.AuftragUserControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+         <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+        <!-- Accent and AppTheme setting -->
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Aufträge" Grid.Row="0">
+            <TextBlock.Style>
+                <Style>
+                    <Setter Property="TextBlock.FontSize" Value="20" />
+                    <Setter Property="TextBlock.Foreground" Value="#5c616b"></Setter>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <DataGrid ItemsSource="{Binding Auftraege}" IsReadOnly="True" AutoGenerateColumns="false" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Bezeichnung">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Margin="5" Content="{Binding Auftragname}" Cursor="Hand" Grid.Column="1" 
+                                      Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.NavigateToAuftragCommand}"
+                CommandParameter="{Binding AuftragId}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <TextBlock TextDecorations="Underline">
+                <ContentPresenter />
+                                        </TextBlock>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Foreground" Value="DeepSkyBlue" />
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Foreground" Value="LightBlue" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+
+
+
+
+
+                <DataGridTemplateColumn Header="Team">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Margin="5" Content="{Binding Team.Teambezeichnung}" Cursor="Hand" Grid.Column="1" 
+                                      Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.NavigateToTeamCommand}"
+                CommandParameter="{Binding Team.TeamId}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <TextBlock TextDecorations="Underline">
+                <ContentPresenter />
+                                        </TextBlock>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Foreground" Value="DeepSkyBlue" />
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Foreground" Value="LightBlue" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Erledigte Aufgaben" Binding="{Binding ErledigteAufgaben}" />
+                <DataGridTextColumn Header="Offene Aufgaben" Binding="{Binding OffeneAufgaben}" />
+                
+                <DataGridTemplateColumn Header="Erledigte Aufgaben">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Margin="5" Content="{Binding ErledigteAufgaben}" Cursor="Hand" Grid.Column="1" 
+                                      Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.NavigateToTeamCommand}"
+                CommandParameter="{Binding AuftragIdd}">
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <TextBlock TextDecorations="Underline">
+                <ContentPresenter />
+                                        </TextBlock>
+                                    </ControlTemplate>
+                                </Button.Template>
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Foreground" Value="DeepSkyBlue" />
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter Property="Foreground" Value="LightBlue" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTextColumn Header="Priorität" Binding="{Binding Priorität}" />
+                <DataGridTextColumn Header="Erstelldatum" Binding="{Binding ErstellDatum, StringFormat={}{0:dd.MM.yyyy}}" />
+
+                <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                                        EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                                        Header="Abgeschlossen"
+                                        Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=Abgeschlossen, Mode=OneWay}"></DataGridCheckBoxColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

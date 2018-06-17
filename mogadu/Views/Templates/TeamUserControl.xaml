@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:mogadu.Views.Templates"
              xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
-             xmlns:personrep="clr-namespace:mogadu.Views.General"
+             xmlns:personrep="clr-namespace:mogadu.Views.Mitarbeiter"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>

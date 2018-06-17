@@ -132,18 +132,37 @@
     </ApplicationDefinition>
     <Compile Include="Business\AuslastungCalculator.cs" />
     <Compile Include="Business\DataRepository.cs" />
+    <Compile Include="Business\FortschrittCalculator.cs" />
     <Compile Include="Business\Interfaces\IAuslastungCalculator.cs" />
     <Compile Include="Business\Interfaces\IDataRepository.cs" />
+    <Compile Include="Business\Interfaces\IFortschrittCalculator.cs" />
     <Compile Include="Business\Interfaces\IWetterErmittler.cs" />
     <Compile Include="Business\Lohnberechner.cs" />
-    <Compile Include="Business\TeamItem.cs" />
+    <Compile Include="Database\ExpandedEntities\ExpandedAufgabe.cs" />
+    <Compile Include="ViewModel\AbgeschlosseneAufgabenViewModel.cs" />
+    <Compile Include="ViewModel\AufgabenDetailViewModel.cs" />
+    <Compile Include="ViewModel\AuftragDetailViewModel.cs" />
+    <Compile Include="ViewModel\MitarbeiterDetailViewModel.cs" />
+    <Compile Include="ViewModel\OffeneAufgabenViewModel.cs" />
+    <Compile Include="Views\Aufgaben\AbgeschlosseneAufgabenUserControl.xaml.cs">
+      <DependentUpon>AbgeschlosseneAufgabenUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Aufgaben\AufgabenDetailUserControl.xaml.cs">
+      <DependentUpon>AufgabenDetailUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Aufgaben\OffeneAufgabenUserControl.xaml.cs">
+      <DependentUpon>OffeneAufgabenUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\TeamTileUserControl.xaml.cs">
       <DependentUpon>TeamTileUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\WetterTileUserControl.xaml.cs">
       <DependentUpon>WetterTileUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\General\PersonRepresentationUserControl.xaml.cs">
+    <Compile Include="Views\Mitarbeiter\MitarbeiterDetailUserControl.xaml.cs">
+      <DependentUpon>MitarbeiterDetailUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Mitarbeiter\PersonRepresentationUserControl.xaml.cs">
       <DependentUpon>PersonRepresentationUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LogInView.xaml.cs">
@@ -152,20 +171,11 @@
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Suche\AufgabeSucheUserControl.xaml.cs">
-      <DependentUpon>AufgabeSucheUserControl.xaml</DependentUpon>
+    <Compile Include="Views\Templates\AuftragDetailUserControl.xaml.cs">
+      <DependentUpon>AuftragDetailUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Suche\AuftragSucheUserControl.xaml.cs">
-      <DependentUpon>AuftragSucheUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Suche\PersonenSucheUserControl.xaml.cs">
-      <DependentUpon>PersonenSucheUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Templates\AuftrageUserControl.xaml.cs">
-      <DependentUpon>AuftrageUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Templates\SucheUserControl.xaml.cs">
-      <DependentUpon>SucheUserControl.xaml</DependentUpon>
+    <Compile Include="Views\Templates\AuftragUserControl.xaml.cs">
+      <DependentUpon>AuftragUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Templates\TeamUserControl.xaml.cs">
       <DependentUpon>TeamUserControl.xaml</DependentUpon>
@@ -185,19 +195,27 @@
     <Compile Include="Database\ExpandedEntities\ExpandedTeam.cs" />
     <Compile Include="Database\NhibernateSession.cs" />
     <Compile Include="Modules\Modules.cs" />
-    <Compile Include="ViewModel\AufgabenSuchenViewModel.cs" />
     <Compile Include="ViewModel\AuftraegeViewModel.cs" />
-    <Compile Include="ViewModel\AuftragSuchenViewModel.cs" />
     <Compile Include="ViewModel\Interfaces\IWindow.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\PersonSuchenViewModel.cs" />
-    <Compile Include="ViewModel\SucheViewModel.cs" />
     <Compile Include="ViewModel\TeamTileViewModel.cs" />
     <Compile Include="ViewModel\TeamViewModel.cs" />
     <Compile Include="ViewModel\UebersichtViewModel.cs" />
-    <Compile Include="ViewModel\WetterTileViewModelcs.cs" />
+    <Compile Include="ViewModel\WetterTileViewModel.cs" />
     <Compile Include="ViewModel\WindowHandling\WindowInstance.cs" />
+    <Page Include="Views\Aufgaben\AbgeschlosseneAufgabenUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Aufgaben\AufgabenDetailUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Aufgaben\OffeneAufgabenUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Dashboard\TeamTileUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -206,7 +224,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\General\PersonRepresentationUserControl.xaml">
+    <Page Include="Views\Mitarbeiter\MitarbeiterDetailUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Mitarbeiter\PersonRepresentationUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -218,23 +240,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Suche\AufgabeSucheUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\Templates\AuftragDetailUserControl.xaml">
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Suche\AuftragSucheUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Suche\PersonenSucheUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Templates\AuftrageUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Templates\SucheUserControl.xaml">
+    <Page Include="Views\Templates\AuftragUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -348,6 +358,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\sun.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

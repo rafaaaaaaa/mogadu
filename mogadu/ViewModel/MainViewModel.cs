@@ -16,12 +16,16 @@ using System.Windows;
 using System.Windows.Threading;
 using mogadu.Business;
 using mogadu.Business.Interfaces;
+using mogadu.Views.Suche;
+using mogadu.Views.Aufgaben;
+using mogadu.Views.Mitarbeiter;
 
 namespace mogadu.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
         //Membervariablen
+        private static MainViewModel _application;
         private IDataRepository _dataRepository;
         private UserControl _aktuellesTab;
         private long _mitarbeiterId;
@@ -30,12 +34,12 @@ namespace mogadu.ViewModel
 
         public MainViewModel()
         {
+            _application = this;
             _mitarbeiterId = 26;
             _userControlInstances = new ObservableCollection<WindowInstance>();
             NavigateToUebersichtCommand = new DelegateCommand(NavigateToUebersicht);
             NavigateToAuftraegeCommand = new DelegateCommand(NavigateToAuftraege);
-            NavigateToSucheCommand = new DelegateCommand(NavigateToSuche);
-            NavigateToTeamCommand = new DelegateCommand(NavigateToTeam);
+            NavigateToTeamCommand = new DelegateCommand<long?>(NavigateToTeam);
             _dataRepository = new DataRepository();
             NavigateToUebersicht();
         }
@@ -86,23 +90,43 @@ namespace mogadu.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
 
         //Methods
-        private void NavigateToUebersicht()
+        public void NavigateToUebersicht()
         {
             CreateWindow(new UebersichtUserControl(_dataRepository, _mitarbeiterId), Brushes.RoyalBlue);
         }
-        private void NavigateToAuftraege()
+        public void NavigateToAuftraege()
         {
-            CreateWindow(new AuftrageUserControl(_dataRepository, _mitarbeiterId), Brushes.CornflowerBlue);
+            CreateWindow(new AuftragUserControl(_dataRepository, _mitarbeiterId), Brushes.CornflowerBlue);
         }
-        private void NavigateToTeam()
+        public void NavigateToTeam(long? teamId = null)
         {
-            CreateWindow(new TeamUserControl(_dataRepository, _mitarbeiterId), Brushes.LightSkyBlue);
+            if (teamId == null)
+            {
+                CreateWindow(new TeamUserControl(_dataRepository, _mitarbeiterId), Brushes.LightSkyBlue);
+            }
+
+            else
+            {
+                var mitarbeiter = _dataRepository.LoadMitarbeiterByTeamId(teamId.Value);
+                CreateWindow(new TeamUserControl(_dataRepository, mitarbeiter.MitarbeiterId), Brushes.LightSkyBlue);
+            }
         }
-        private void NavigateToSuche()
+        public void NavigateToAuftragDetail(long? auftragId = null)
         {
-            CreateWindow(new SucheUserControl(_dataRepository, _mitarbeiterId), Brushes.LightBlue);
+                CreateWindow(new AuftragDetailUserControl(_dataRepository, auftragId.Value), Brushes.LightGray);            
         }
-        private void CreateWindow(UserControl usercontrol, Brush borderColor)
+
+        public void NavigateToAufgabenDetail(long aufgabenId)
+        {
+            CreateWindow(new AufgabenDetailUserControl(_dataRepository, aufgabenId), Brushes.LightSteelBlue);
+        }
+
+        public void NavigateToMitarbeiterDetail(long mitarbeiterId)
+        {
+            CreateWindow(new MitarbeiterDetailUserControl(_dataRepository, mitarbeiterId), Brushes.LightSteelBlue);
+        }
+
+        public void CreateWindow(UserControl usercontrol, Brush borderColor)
         {
             var windowInstance = new WindowInstance(this, borderColor) { UserControlInstance = usercontrol, WindowName = ((IWindow)usercontrol.DataContext).Windowname };
             _userControlInstances.Insert(0, windowInstance);
@@ -141,6 +165,21 @@ namespace mogadu.ViewModel
         protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+        public static MainViewModel Application
+        {
+            get
+            {
+                if(_application == null)
+                {
+                    _application = new MainViewModel();
+                }
+                return _application;
+            }
+            set
+            {
+                _application = value;
+            }
         }
     }
 }

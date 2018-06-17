@@ -32,7 +32,7 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="400px"></RowDefinition>
+                <RowDefinition Height="300px"></RowDefinition>
             </Grid.RowDefinitions>
             <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.Column="0">
                 <ItemsControl Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" ItemsSource="{Binding UserControlInstances}">
@@ -102,9 +102,8 @@
                 </ItemsControl>            
             </ScrollViewer>
 
-            <Grid Grid.Column="0" Grid.Row="1"  Background="DarkGray">
+            <Grid Grid.Column="0" Grid.Row="1"  Background="DarkGray" Margin="0,10,0,0">
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -126,13 +125,7 @@
                         <Image Margin="0,0,0,5" Source="pack://application:,,,/Resources/personal.png" Height="35"></Image>
                         <TextBlock  Margin="0,0,0,5"  Text="Team" HorizontalAlignment="Center"></TextBlock>
                     </StackPanel>
-                </Button>
-                <Button Grid.Row="3" Background ="LightGray" BorderBrush="LightBlue"  Command="{Binding NavigateToSucheCommand}" BorderThickness="12,0,0,0"  VerticalContentAlignment= "Center">
-                    <StackPanel>
-                        <Image Margin="0,0,0,5" Source="pack://application:,,,/Resources/suche.png" Height="35"></Image>
-                        <TextBlock  Margin="0,0,0,5"  Text="Suche" HorizontalAlignment="Center"></TextBlock>
-                    </StackPanel>
-                </Button>
+                </Button>           
             </Grid>
             <GridSplitter Grid.Column="1" Width="2" Background="LightBlue" Margin="1,0,0,0" HorizontalAlignment="Stretch"></GridSplitter>
 

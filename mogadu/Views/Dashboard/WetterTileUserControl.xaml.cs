@@ -1,4 +1,6 @@
-﻿using System;
+﻿using mogadu.Business;
+using mogadu.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,7 @@ namespace mogadu.Views.Dashboard
         public WetterTileUserControl()
         {
             InitializeComponent();
+            DataContext = new WetterTileViewModel(new WetterErmittler());
         }
     }
 }

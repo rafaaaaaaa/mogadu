@@ -13,25 +13,14 @@ using System.Windows.Input;
 
 namespace mogadu.ViewModel
 {
-    public class TeamTileViewModel : IWindow
+    public class TeamTileViewModel 
     {
         
         public TeamTileViewModel(IDataRepository dataRepository, long mitarbeiterId)
         {
-            Teams = new List<TeamItem>();
-            var teams = dataRepository.AlleTeams;
-            foreach (var team in teams)
-            {
-                Teams.Add(new TeamItem(team));
-            }
+            Team = dataRepository.LoadTeamByMitarbeiterId(mitarbeiterId);
         }
         public ICommand GoToDetailsCommand { get; set; }
-        public List<TeamItem> Teams { get; set; }
-        public string Windowname { get { return "Team"; } }
-
-        private void GoToDetails(object teamId)
-        {
-
-        }
+        public Team Team { get; set; }
     }
 }

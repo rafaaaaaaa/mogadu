@@ -1,14 +1,16 @@
-﻿C:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\obj\Debug\GeneratedInternalTypeHelper.g.cs
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\App.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\Dashboard\WetterTileUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\General\PersonRepresentationUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\LogInView.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\MainView.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\Suche\AufgabeSucheUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\Suche\AuftragSucheUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\Suche\PersonenSucheUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\Templates\SucheUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\Templates\TeamUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Views\Templates\UebersichtUserControl.xaml;;
-FC:\Users\vmadmin\Documents\Visual Studio 2017\Projects\mogadu\mogadu\Resources\ControlStyles.xaml;;
+﻿
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\App.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Aufgaben\AbgeschlosseneAufgabenUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Aufgaben\AufgabenDetailUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Aufgaben\OffeneAufgabenUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Dashboard\WetterTileUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Mitarbeiter\MitarbeiterDetailUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Mitarbeiter\PersonRepresentationUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\LogInView.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\MainView.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Templates\AuftragDetailUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Templates\AuftragUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Templates\TeamUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Views\Templates\UebersichtUserControl.xaml;;
+FC:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\Resources\ControlStyles.xaml;;
 

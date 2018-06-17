@@ -15,15 +15,17 @@ namespace mogadu.Business
     public class DataRepository : IDataRepository
     {
         private IAuslastungCalculator _auslastungsCalculator { get; set; }
+        private IFortschrittCalculator _fortschrittCalculator { get; set; }
         public List<ExpandedMitarbeiter> AlleMitarbeiter { get; set; }
         public List<ExpandedAuftrag> AlleAuftraege { get; set; }
-        public List<Aufgabe> AlleAufgaben { get; set; }
+        public List<ExpandedAufgabe> AlleAufgaben { get; set; }
         public List<ExpandedTeam> AlleTeams { get; set; }
         public List<Position> AllePositionen { get; set; }
         public List<Mitarbeiterlogin> AlleLogins { get; set; }
 
         public DataRepository()
         {
+            _fortschrittCalculator = new FortschrittCalculator();
             _auslastungsCalculator = new AuslastungCalculator(this);
             RefreshData();
         }
@@ -37,6 +39,7 @@ namespace mogadu.Business
             AlleAuftraege = LoadAllAuftraege();
             AlleTeams = LoadAllTeams();
             RefillTeams();
+            RefillAuftrag(); 
         }
 
         //LOAD ALL
@@ -60,7 +63,7 @@ namespace mogadu.Business
 
             return auftraege.Select(CreateExpandedAuftrag).ToList();
         }
-        public List<Aufgabe> LoadAllAufgaben()
+        public List<ExpandedAufgabe> LoadAllAufgaben()
         {
             List<Aufgabe> aufgaben = null;
             using (ISession session = NhibernateSession.OpenSession())
@@ -68,7 +71,7 @@ namespace mogadu.Business
                 aufgaben = session.Query<Aufgabe>().ToList();
             }
 
-            return aufgaben;
+            return aufgaben.Select(CreateExpandedAufgabe).ToList();
         }
         public List<ExpandedTeam> LoadAllTeams()
         {
@@ -102,7 +105,7 @@ namespace mogadu.Business
         }
 
         //SERVICEFUNCTIONS
-        public Mitarbeiter LoadMitarbeiterById(long id)
+        public ExpandedMitarbeiter LoadMitarbeiterById(long id)
         {
             return AlleMitarbeiter.Where(m => m.MitarbeiterId == id).First();
         }
@@ -143,7 +146,69 @@ namespace mogadu.Business
                 return aufgaben;
             }
             return null;
-        }        
+        }
+        public ExpandedMitarbeiter LoadMitarbeiterByTeamId(long id)
+        {
+            return AlleMitarbeiter.Where(m => m.TeamId == id).First();
+        }
+        public ExpandedAuftrag LoadAuftragByAuftragId(long id)
+        {
+            return AlleAuftraege.Where(a => a.AuftragId == id).First();
+        }
+        public List<ExpandedAufgabe> LoadAllAufgabenByAuftrag(long id)
+        {
+            return AlleAufgaben.Where(a => a.AuftragId == id).ToList();
+        }
+
+        public void SafeAufgabe(ExpandedAufgabe aufgabe)
+        {
+            Aufgabe updatedAufgabe = new Aufgabe
+            {
+                Aufgabenbeschreibung = aufgabe.Aufgabenbeschreibung,
+                AufgabenId = aufgabe.AufgabenId,
+                Aufgabenname = aufgabe.Aufgabenname,
+                AuftragId = aufgabe.AuftragId,
+                MitarbeiterId = aufgabe.MitarbeiterId,
+                Prozentualstatus = aufgabe.Prozentualstatus
+            };  
+
+            using (ISession session = NhibernateSession.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    session.Update(updatedAufgabe); 
+                    transaction.Commit();
+                }
+            }
+        }
+
+        public void SafeAuftrag(ExpandedAuftrag auftrag)
+        {
+            Auftrag updatedAuftrag = new Auftrag
+            {
+                AuftragId = auftrag.AuftragId,
+                Auftragname = auftrag.Auftragname,
+                ErstellDatum = auftrag.ErstellDatum,
+                FinishDatum = DateTime.Today,
+                Priorität = auftrag.Priorität,
+                TeamId = auftrag.TeamId   
+            };
+
+            using (ISession session = NhibernateSession.OpenSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    session.Update(updatedAuftrag); 
+                    transaction.Commit();
+                }
+            }
+        }
+
+
+        public ExpandedAufgabe LoadAufgabeByAufgabenId(long id)
+        {
+            return AlleAufgaben.Where(a => a.AufgabenId == id).First();
+        }
 
         //EXPANDED CREATORS
         private ExpandedMitarbeiter CreateExpandedMitarbeiter(Mitarbeiter mitarbeiter)
@@ -178,15 +243,13 @@ namespace mogadu.Business
         }
         private ExpandedAuftrag CreateExpandedAuftrag(Auftrag auftrag)
         {
-            List<Aufgabe> aufgaben = null;
+            List<ExpandedAufgabe> aufgaben = null;
             List<ExpandedAuftrag> expandedAuftraege = new List<ExpandedAuftrag>();
+            
+             aufgaben = AlleAufgaben.Where(a => a.AuftragId == auftrag.AuftragId).ToList();
+            
 
-            using (ISession session = NhibernateSession.OpenSession())
-            {
-                aufgaben = AlleAufgaben.Where(a => a.AuftragId == auftrag.AuftragId).ToList();
-            }
-
-            return new ExpandedAuftrag()
+            return new ExpandedAuftrag(_fortschrittCalculator)
             {
                 AuftragId = auftrag.AuftragId,
                 Auftragname = auftrag.Auftragname,
@@ -194,7 +257,20 @@ namespace mogadu.Business
                 FinishDatum = auftrag.FinishDatum ?? null,
                 Priorität = auftrag.Priorität,
                 TeamId = auftrag.TeamId,
-                Aufgaben = aufgaben                
+                Aufgaben = aufgaben
+            };
+        }        
+        private ExpandedAufgabe CreateExpandedAufgabe(Aufgabe aufgabe)
+        {
+            return new ExpandedAufgabe
+            {
+                Aufgabenbeschreibung = aufgabe.Aufgabenbeschreibung,
+                AufgabenId = aufgabe.AufgabenId,
+                Aufgabenname = aufgabe.Aufgabenname,
+                AuftragId = aufgabe.AuftragId,
+                Mitarbeiter = AlleMitarbeiter.Where(m => m.MitarbeiterId == aufgabe.MitarbeiterId).First(),
+                MitarbeiterId = aufgabe.MitarbeiterId,
+                Prozentualstatus = aufgabe.Prozentualstatus
             };
         }
         private void RefillTeams()
@@ -208,6 +284,14 @@ namespace mogadu.Business
             {
                 auftrag.Team = AlleTeams.Where(x => x.TeamId == auftrag.TeamId).First();
             }  
+        }
+
+        private void RefillAuftrag()
+        {
+            foreach(var aufgabe in AlleAufgaben)
+            {
+                aufgabe.Auftrag = AlleAuftraege.Where(a => a.AuftragId == aufgabe.AuftragId).First();
+            }
         }
     }
 

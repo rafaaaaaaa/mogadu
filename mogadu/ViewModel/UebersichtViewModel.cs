@@ -21,8 +21,20 @@ namespace mogadu.ViewModel
         {
             TeamTile = new TeamTileUserControl(dataRepository, mitarbeiterId);
             WetterTile = new WetterTileUserControl();
+
+            //LOGIK NICHT IMPLEMENTIERT
+            MitarbeiterDesMonates = dataRepository.AlleMitarbeiter.First().FullName;
+            Tag = DateTime.Today.DayOfWeek.ToString();
+
+            var auftrag = dataRepository.AlleAuftraege.Where(x => x.FinishDatum != null).OrderBy(x => x.FinishDatum).Last();
+            Neuigkeit = "Der Auftrag '" + auftrag.Auftragname + "' wurde vor " + (auftrag.FinishDatum.Value.Date - DateTime.Today).Days + " Tagen erfolgreich abgeschlossen.";
+            Monat = DateTime.Today.Month.ToString();
         }
 
+        public string Monat { get; set; }
+        public string Neuigkeit { get; set; }
+        public string Tag { get; set; }
+        public string MitarbeiterDesMonates { get; set; }
         public TeamTileUserControl TeamTile { get; set; }
         public WetterTileUserControl WetterTile { get; set; }
 

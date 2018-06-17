@@ -92,89 +92,36 @@
             <StackPanel>
                 <mah:Tile Title="Wetter"  Style="{StaticResource ExtraSmallTileStyle}" Background="LightSkyBlue" Margin="110,0,0,0">
                     <mah:Tile.Content>
-                        <ContentControl Content ="{Binding WetterTile }" Height="200" Width="200" />                    
+                        <ContentControl Content ="{Binding WetterTile }" Height="200" Width="200" Margin="0,0,0,0" />                    
                     </mah:Tile.Content>
                 </mah:Tile>
                 <mah:Tile Title="Mitarbeiter des Monates"  Style="{StaticResource MiddleTileStyle}" Background="DeepSkyBlue" Margin="5,5,0,0">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
+                    <mah:Tile.Content>
+                            <Label Content="{Binding MitarbeiterDesMonates}" FontSize="20"></Label>
+                    </mah:Tile.Content>
                 </mah:Tile>
-                <mah:Tile Title="Tag"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="0,10,50,0" RenderTransformOrigin="0.622,0.5">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile}" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
+                <mah:Tile Title="Tag"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="0,10,50,0" RenderTransformOrigin="0.622,0.5" Click="Tile_Click">
+                    <mah:Tile.Content>
+                        <Label Content="{Binding Tag}" FontSize="20"></Label>
+                    </mah:Tile.Content>
                 </mah:Tile>
 
             </StackPanel>
             <StackPanel>
-                <mah:Tile Title="Aufgaben"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="5,0,120,0">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
+                <mah:Tile Title="Firmenname"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="5,0,120,0">
+                    <mah:Tile.Content>
+                        <TextBlock Text="IT Solutions Zentralschweiz" FontSize="12" Foreground="Black"></TextBlock>
+                    </mah:Tile.Content>
                 </mah:Tile>
                 <mah:Tile Title="Neuigkeiten"  Style="{StaticResource LargeTileStyle}" Background="LightBlue">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
+                    <mah:Tile.Content>
+                        <TextBlock Text="{Binding Neuigkeit}" FontSize="16" Foreground="Black" Width="250px" TextWrapping="Wrap"></TextBlock>
+                    </mah:Tile.Content> 
                 </mah:Tile>
-                <mah:Tile Title="Sonstiges"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="120,0,0,0">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
-                </mah:Tile>
+                <mah:Tile Title="Monat"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="120,0,0,0"/>
             </StackPanel>
 
-            <StackPanel>
-                <mah:Tile Title="Teamleiter"  Style="{StaticResource MiddleTileStyle}" Background="DeepSkyBlue" Margin="0,0,0,0">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
-                </mah:Tile>
-
-                <mah:Tile Title="Positionen"  Style="{StaticResource SmallTileStyle}" Background="LightBlue" Margin="60,10,0,0" Click="Tile_Click">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
-                </mah:Tile>
-                <mah:Tile Title="Aufträge"  Style="{StaticResource ExtraSmallTileStyle}" Background="LightSkyBlue" Margin="110,10,0,0">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile }" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
-                </mah:Tile>
-            </StackPanel>
-            <StackPanel>
-            <mah:Tile Title="Pendenzen"  Style="{StaticResource LargeTileStyle}" Background="LightBlue" Margin="10,0,0,0">
-                <mah:Tile.ContentTemplate>
-                    <DataTemplate>
-                        <ContentControl Content ="{Binding TeamTile}" Height="200" Width="200" />
-                    </DataTemplate>
-                </mah:Tile.ContentTemplate>
-            </mah:Tile>
-                <mah:Tile Title="Firma"  Style="{StaticResource MiddleTileStyle}" Background="DeepSkyBlue" Margin="0,10,50,0">
-                    <mah:Tile.ContentTemplate>
-                        <DataTemplate>
-                            <ContentControl Content ="{Binding TeamTile}" Height="200" Width="200" />
-                        </DataTemplate>
-                    </mah:Tile.ContentTemplate>
-                </mah:Tile>
-            </StackPanel>
+       
         </WrapPanel>
 
     </Grid>
