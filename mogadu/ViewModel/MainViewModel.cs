@@ -32,10 +32,11 @@ namespace mogadu.ViewModel
         private bool _isLoading;
         private ObservableCollection<WindowInstance> _userControlInstances;
 
-        public MainViewModel()
+        public MainViewModel(IDataRepository dataRepository, long mitarbeiterId)
         {
+            _dataRepository = dataRepository;
+            _mitarbeiterId = mitarbeiterId;
             _application = this;
-            _mitarbeiterId = 26;
             _userControlInstances = new ObservableCollection<WindowInstance>();
             NavigateToUebersichtCommand = new DelegateCommand(NavigateToUebersicht);
             NavigateToAuftraegeCommand = new DelegateCommand(NavigateToAuftraege);
@@ -170,10 +171,6 @@ namespace mogadu.ViewModel
         {
             get
             {
-                if(_application == null)
-                {
-                    _application = new MainViewModel();
-                }
                 return _application;
             }
             set

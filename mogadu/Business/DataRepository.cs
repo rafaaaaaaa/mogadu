@@ -32,8 +32,8 @@ namespace mogadu.Business
 
         public void RefreshData()
         {
-            AllePositionen = LoadAllPositions();
             AlleLogins = LoadAllMitarbeiterLogins();
+            AllePositionen = LoadAllPositions();
             AlleMitarbeiter = LoadAllMitarbeiter();
             AlleAufgaben = LoadAllAufgaben();
             AlleAuftraege = LoadAllAuftraege();
@@ -123,7 +123,7 @@ namespace mogadu.Business
         public List<ExpandedMitarbeiter> LoadAllMitarbeiterOfTeamByMitarbeiterId(long id)
         {
             var mitarbeiter = AlleMitarbeiter.Where(m => m.MitarbeiterId == id).First();
-            return AlleMitarbeiter.Where(m => m.Team == mitarbeiter.Team).ToList();;
+            return AlleMitarbeiter.Where(m => m.TeamId == mitarbeiter.TeamId).ToList();;
         }
         public Position LoadPositionById(long id)
         {

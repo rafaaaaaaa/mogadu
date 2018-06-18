@@ -26,7 +26,7 @@ namespace mogadu.Views
             ResizeMode = ResizeMode.NoResize;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             InitializeComponent();
-            DataContext = new LoginViewModel(new DataRepository());
+            DataContext = new LoginViewModel(new DataRepository(), this);
         }
     }
 }

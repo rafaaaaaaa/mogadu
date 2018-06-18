@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="mogadu.App" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Business.AuslastungCalculator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Business\AuslastungCalculator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Business.DataRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAIEFCCEABFgIAAAAAAAACAkAAAcAIAIzEABAEFAAgA=</HashCode>
+      <FileName>Business\DataRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Business.FortschrittCalculator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\FortschrittCalculator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Business.Lohnberechner" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Lohnberechner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Business.WetterErmittler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\WetterErmittler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Database.Entities.Aufgabe" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAAAgAAAAAAAAAAAgAAAAAAAAAAAAgABAAAA=</HashCode>
+      <FileName>Database\Entities\Aufgabe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.Entities.Auftrag" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAGAAAAAAACAAAAAAAAAAAAACBAAAA=</HashCode>
+      <FileName>Database\Entities\Auftrag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.Entities.Mitarbeiter" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAAAAAAAAAAQCAACAgAAAAAACAAAAAAA=</HashCode>
+      <FileName>Database\Entities\Mitarbeiter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.Entities.Mitarbeiterlogin" Collapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Database\Entities\Mitarbeiterlogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.Entities.Position" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAg=</HashCode>
+      <FileName>Database\Entities\Position.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.Entities.Team" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\Entities\Team.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.ExpandedEntities.ExpandedAufgabe" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\ExpandedEntities\ExpandedAufgabe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.ExpandedEntities.ExpandedAuftrag" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAEAAAAAAgAAAAAAAAAAAAQAEAgCAAAAAAQ=</HashCode>
+      <FileName>Database\ExpandedEntities\ExpandedAuftrag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.ExpandedEntities.ExpandedMitarbeiter" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAIAgAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Database\ExpandedEntities\ExpandedMitarbeiter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.ExpandedEntities.ExpandedTeam" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAgSAAAAAAAAAAAAEAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Database\ExpandedEntities\ExpandedTeam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Database.NhibernateSession" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Database\NhibernateSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Modules.Modules" Collapsed="true">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Modules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Properties.Resources" Collapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAABAAkAAASAAAAAAABEAAAAQIAAAAAAQQAAAQAAKA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.Properties.Settings" Collapsed="true">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.ViewModel.AbgeschlosseneAufgabenViewModel" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAgAAAAAAAAAAAABAAAgAAAAgAAA=</HashCode>
+      <FileName>ViewModel\AbgeschlosseneAufgabenViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.ViewModel.AufgabenDetailViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAIQAEIDAEEAAIAAAAAAAgAAQAAAAAAACCCBEAAA=</HashCode>
+      <FileName>ViewModel\AufgabenDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.ViewModel.AuftraegeViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAACEAEAAAAAAAABAACAAAAAABCAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\AuftraegeViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.ViewModel.AuftragDetailViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAQAAAAAAAAAAAAoAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\AuftragDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.ViewModel.LoginViewModel" Collapsed="true">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAwAAAEAAAAAIAAAAAAAgAAAAAAAAAASAADAAAA=</HashCode>
+      <FileName>ViewModel\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="mogadu.ViewModel.MainViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAYARAAABCEAIAAIUBAEAAAgAAAAQAAACQAAABAhgg=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.ViewModel.MitarbeiterDetailViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\MitarbeiterDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.ViewModel.OffeneAufgabenViewModel" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAgAAAAAAAAAAAABAAAgAAAAgAAA=</HashCode>
+      <FileName>ViewModel\OffeneAufgabenViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.ViewModel.TeamTileViewModel" Collapsed="true">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAQAA=</HashCode>
+      <FileName>ViewModel\TeamTileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.ViewModel.TeamViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAgAEAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\TeamViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.ViewModel.UebersichtViewModel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAACgAAgAAAAAAAAAAAAAAAAFAgAAAAAgAAA=</HashCode>
+      <FileName>ViewModel\UebersichtViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.ViewModel.WetterTileViewModel" Collapsed="true">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\WetterTileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="mogadu.ViewModel.WindowHandling.WindowInstance" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAEAAAAAQAAAsIAAgAACgAAAAAAAAAAAAgAAABA=</HashCode>
+      <FileName>ViewModel\WindowHandling\WindowInstance.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Aufgaben.AbgeschlosseneAufgabenUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Aufgaben\AbgeschlosseneAufgabenUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Aufgaben.AufgabenDetailUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Aufgaben\AufgabenDetailUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Aufgaben.OffeneAufgabenUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Aufgaben\OffeneAufgabenUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Dashboard.TeamTileUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Dashboard\TeamTileUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Dashboard.WetterTileUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Dashboard\WetterTileUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.LogInView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\LogInView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.MainView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Mitarbeiter.MitarbeiterDetailUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Mitarbeiter\MitarbeiterDetailUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Mitarbeiter.PersonRepresentationUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Mitarbeiter\PersonRepresentationUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Templates.AuftragDetailUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Templates\AuftragDetailUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Templates.TeamUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Templates\TeamUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Templates.UebersichtUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Views\Templates\UebersichtUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="mogadu.Views.Suche.AuftragUserControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Templates\AuftragUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="mogadu.Business.Interfaces.IAuslastungCalculator">
+    <Position X="4" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Interfaces\IAuslastungCalculator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mogadu.Business.Interfaces.IDataRepository">
+    <Position X="7.75" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>gAIEFCCEABBAIAAAAAAAACAEAAAcAAAAzEABAEEAAAA=</HashCode>
+      <FileName>Business\Interfaces\IDataRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mogadu.Business.Interfaces.IFortschrittCalculator">
+    <Position X="9.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Interfaces\IFortschrittCalculator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mogadu.Business.Interfaces.IWetterErmittler">
+    <Position X="11.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business\Interfaces\IWetterErmittler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="mogadu.ViewModel.Interfaces.IWindow">
+    <Position X="13" Y="6.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\Interfaces\IWindow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

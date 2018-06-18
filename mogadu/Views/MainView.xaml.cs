@@ -1,4 +1,5 @@
-﻿using mogadu.ViewModel;
+﻿using mogadu.Business.Interfaces;
+using mogadu.ViewModel;
 using System.Windows;
 
 namespace mogadu.Views
@@ -8,10 +9,11 @@ namespace mogadu.Views
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView()
+        public MainView(IDataRepository dataRepository, long mitarbeiterId)
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = new MainViewModel(dataRepository, mitarbeiterId);
+
         }
     }
 }

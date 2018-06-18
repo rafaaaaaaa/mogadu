@@ -16,5 +16,5 @@ C:\Users\TheAdmin\Documents\GitHub\mogadu\mogadu\App.xaml
 91-738858904
 Views\Aufgaben\AbgeschlosseneAufgabenUserControl.xaml;Views\Aufgaben\AufgabenDetailUserControl.xaml;Views\Aufgaben\OffeneAufgabenUserControl.xaml;Views\Dashboard\TeamTileUserControl.xaml;Views\Dashboard\WetterTileUserControl.xaml;Views\Mitarbeiter\MitarbeiterDetailUserControl.xaml;Views\Mitarbeiter\PersonRepresentationUserControl.xaml;Views\LogInView.xaml;Views\MainView.xaml;Views\Templates\AuftragDetailUserControl.xaml;Views\Templates\AuftragUserControl.xaml;Views\Templates\TeamUserControl.xaml;Views\Templates\UebersichtUserControl.xaml;Resources\ControlStyles.xaml;
 
-True
+False
 
